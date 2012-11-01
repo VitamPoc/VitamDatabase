@@ -1,0 +1,26 @@
+Couverture :
+- schema, table, champs, primary key, constraints
+
+FieldValue: Object val, Field
+Type: simple type, FieldRef (Field) = constraints (Table included in Field already)
+Field: Name, Description, Type, Longueur, Nullable, Table
+PrimaryKey: Field 0..k (k < n)
+TableValue: Table, Rank, FieldValue 0..n
+Table: Name, Description, Field 0..n, TableValue 0..m
+Schema: Name, Description, Table 0..p
+
+Functions:
+1) load in db if possible (readonly after)
+2) check consistency (pk, constraints, type) => add constraints only after
+3) add constraints (in order)
+4) request select xxx from xxx where xxx -> DB
+5) Si inconsistent => fonctions basiques de select sans DB
+
+Create order:
+Forall Table extract Field, PK => Structure + ordre
+  if constraint Relation(table1, table2), sinon Relation(table1, -)
+Forall Relation(table1, table2) => table2 # 0 => table1.rank = max(table1.rank, table2.rank +1) 
+Forall Table /rank Extract Value
+
+=> HashGlobal: Table_Field, Table, Table_Pk_Field1_..._Fieldn, Si index idem IDX (PK)
+=> HashConstraints: Table_Field (Field contient Field en relation et donc Table)

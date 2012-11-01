@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project VitamDatabase with libraries in sub-folder">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="J:/Git/SEDA/VitamDatabase/VitamDatabaseGui.jar">
+            <manifest>
+                <attribute name="Main-Class" value="fr.gouv.culture.vitam.dbgui.DatabaseGui"/>
+                <attribute name="Class-Path" value=". VitamDatabaseGui_lib/logback-access-1.0.7.jar VitamDatabaseGui_lib/logback-classic-1.0.7.jar VitamDatabaseGui_lib/logback-core-1.0.7.jar VitamDatabaseGui_lib/slf4j-api-1.7.1.jar VitamDatabaseGui_lib/h2-1.3.168.jar VitamDatabaseGui_lib/mysql-connector-java-5.1.21.jar VitamDatabaseGui_lib/postgresql-9.1-901-1.jdbc4.jar VitamDatabaseGui_lib/ojdbc6.jar VitamDatabaseGui_lib/dom4j-1.6.1.jar VitamDatabaseGui_lib/xml-apis-1.0.b2.jar VitamDatabaseGui_lib/jaxen-1.1.4.jar VitamDatabaseGui_lib/WaarpCommon-1.2.9.jar"/>
+            </manifest>
+            <fileset dir="J:/Users/workspace42fredo/VitamDatabase/target/classes"/>
+            <fileset dir="J:/Users/workspace42fredo/VitamDatabase/license"/>
+        </jar>
+        <delete dir="J:/Git/SEDA/VitamDatabase/VitamDatabaseGui_lib"/>
+        <mkdir dir="J:/Git/SEDA/VitamDatabase/VitamDatabaseGui_lib"/>
+        <copy file="C:/Users/frederic/.m2/repository/ch/qos/logback/logback-access/1.0.7/logback-access-1.0.7.jar" todir="J:/Git/SEDA/VitamDatabase/VitamDatabaseGui_lib"/>
+        <copy file="C:/Users/frederic/.m2/repository/ch/qos/logback/logback-classic/1.0.7/logback-classic-1.0.7.jar" todir="J:/Git/SEDA/VitamDatabase/VitamDatabaseGui_lib"/>
+        <copy file="C:/Users/frederic/.m2/repository/ch/qos/logback/logback-core/1.0.7/logback-core-1.0.7.jar" todir="J:/Git/SEDA/VitamDatabase/VitamDatabaseGui_lib"/>
+        <copy file="C:/Users/frederic/.m2/repository/org/slf4j/slf4j-api/1.7.1/slf4j-api-1.7.1.jar" todir="J:/Git/SEDA/VitamDatabase/VitamDatabaseGui_lib"/>
+        <copy file="C:/Users/frederic/.m2/repository/com/h2database/h2/1.3.168/h2-1.3.168.jar" todir="J:/Git/SEDA/VitamDatabase/VitamDatabaseGui_lib"/>
+        <copy file="C:/Users/frederic/.m2/repository/mysql/mysql-connector-java/5.1.21/mysql-connector-java-5.1.21.jar" todir="J:/Git/SEDA/VitamDatabase/VitamDatabaseGui_lib"/>
+        <copy file="C:/Users/frederic/.m2/repository/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar" todir="J:/Git/SEDA/VitamDatabase/VitamDatabaseGui_lib"/>
+        <copy file="J:/Users/workspace42fredo/VitamDatabase/lib/ojdbc6.jar" todir="J:/Git/SEDA/VitamDatabase/VitamDatabaseGui_lib"/>
+        <copy file="C:/Users/frederic/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar" todir="J:/Git/SEDA/VitamDatabase/VitamDatabaseGui_lib"/>
+        <copy file="C:/Users/frederic/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar" todir="J:/Git/SEDA/VitamDatabase/VitamDatabaseGui_lib"/>
+        <copy file="C:/Users/frederic/.m2/repository/jaxen/jaxen/1.1.4/jaxen-1.1.4.jar" todir="J:/Git/SEDA/VitamDatabase/VitamDatabaseGui_lib"/>
+        <copy file="J:/Users/workspace42fredo/VitamDatabase/lib/WaarpCommon-1.2.9.jar" todir="J:/Git/SEDA/VitamDatabase/VitamDatabaseGui_lib"/>
+    </target>
+</project>

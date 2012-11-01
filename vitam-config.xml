@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Vitam Tools configuration</comment>
+<entry key="vitam.jdbcoption">;AUTO_SERVER=TRUE</entry>
+<entry key="vitam.jdbcpwd">AN</entry>
+<entry key="vitam.exportfulldata">0</entry>
+<entry key="vitam.jdbcpath">J:\Git\SEDA\VitamDatabase\databases\andata.h2.db</entry>
+<entry key="vitam.databasetype">h2</entry>
+<entry key="vitam.jdbcuser">AN</entry>
+<entry key="vitam.tablename"/>
+<entry key="vitam.separator">,</entry>
+<entry key="vitam.jdbcstart">jdbc:h2:</entry>
+</properties>

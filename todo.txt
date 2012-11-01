@@ -1,0 +1,14 @@
+- Cindoc structure : format xml ?
+
+- Table select helper:
+Voir avec DbModelH2 faire évoluer getRows avec une classe DbSelect en argument.
+	- CheckComBox From Table 
+		=> From table.name [, ...]
+	- CheckCombo Select Field (Table)
+		=> Select table.name'.'field.name [, ...]
+	- CheckCombo Where Field (Table)
+		CheckCombo [NOT] Condition [=,<,>,<=,>=,<>, IS NOT NULL, BETWEEN val1 AND val2, LIKE (_=., %= *) string, LENGHT(original field)=valLength]
+		- fonction de la condition extraval(s) = CheckCombo Field + Text 
+		=> Where [NOT] condition.toString(field, extraval(s)) [AND ... ]
+	- Text LIMIT valeur 
+		=> LIMIT valeur
