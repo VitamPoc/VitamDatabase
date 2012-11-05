@@ -1030,7 +1030,14 @@ public class VitamDatabaseSelectDialog extends JPanel {
 		chooser.setDialogTitle(text);
 		if (save) {
 			if (chooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
-				return chooser.getSelectedFile();
+				File file = chooser.getSelectedFile();
+				if (extension != null) {
+					String extfile =  FileExtensionFilter.getExtension(file);
+					if (extfile == null || extfile.equalsIgnoreCase(extension)) {
+						file = new File(file.getAbsolutePath()+"."+extension);
+					}
+				}
+				return file;
 			}
 		} else {
 			if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
