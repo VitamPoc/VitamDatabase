@@ -7,6 +7,7 @@ public class ConstanceDataType {
 	static final public ConstanceDataType NUM = new ConstanceDataType("NUM", Types.BIGINT);
 	static final public ConstanceDataType NUMV = new ConstanceDataType("NUMV", Types.DOUBLE);
 	static final public ConstanceDataType AN = new ConstanceDataType("A.N.", Types.VARCHAR);
+	static final public ConstanceDataType A = new ConstanceDataType("A.", Types.VARCHAR);
 	static final public ConstanceDataType T = new ConstanceDataType("T", Types.VARCHAR);
 	static final public ConstanceDataType SNUM = new ConstanceDataType("SNUM", Types.BIGINT);
 
@@ -16,7 +17,7 @@ public class ConstanceDataType {
 		types.put(NUM.name, NUM.type);
 		types.put(NUMV.name, NUMV.type);
 		types.put(AN.name, AN.type);
-		types.put("A.N.", AN.type);
+		types.put(A.name, A.type);
 		types.put(T.name, T.type);
 		types.put(SNUM.name, SNUM.type);
 	}

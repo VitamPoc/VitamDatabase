@@ -539,8 +539,8 @@ public class VitamDatabaseSelectDialog extends JPanel {
 		xmlFilePanel.add(lblTable, gbc_lblTable);
 
 		comboBoxOperator = new JComboBox();
-		comboBoxOperator.setPreferredSize(new Dimension(60, 20));
-		comboBoxOperator.setMinimumSize(new Dimension(60, 20));
+		comboBoxOperator.setPreferredSize(new Dimension(100, 20));
+		comboBoxOperator.setMinimumSize(new Dimension(100, 20));
 		comboBoxOperator.setPrototypeDisplayValue(" Not Between XXX");
 		comboBoxOperator.setModel(new DefaultComboBoxModel(DbOperator.values()));
 		comboBoxOperator.addActionListener(new ActionListener() {
@@ -881,7 +881,8 @@ public class VitamDatabaseSelectDialog extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				File file = openFile(null, "Export CSV", true, "csv");
 				if (file != null) {
-					SimpleDelimiterWriter writer = new SimpleDelimiterWriter(file, StaticValues.config.separator);
+					SimpleDelimiterWriter writer = new SimpleDelimiterWriter(file,
+							StaticValues.config.separator);
 					try {
 						writer.write(DbConstant.admin.session, dbselect);
 					} catch (WaarpDatabaseSqlException e) {
@@ -1032,9 +1033,9 @@ public class VitamDatabaseSelectDialog extends JPanel {
 			if (chooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
 				File file = chooser.getSelectedFile();
 				if (extension != null) {
-					String extfile =  FileExtensionFilter.getExtension(file);
-					if (extfile == null || extfile.equalsIgnoreCase(extension)) {
-						file = new File(file.getAbsolutePath()+"."+extension);
+					String extfile = FileExtensionFilter.getExtension(file);
+					if (extfile == null || !extfile.equalsIgnoreCase(extension)) {
+						file = new File(file.getAbsolutePath() + "." + extension);
 					}
 				}
 				return file;

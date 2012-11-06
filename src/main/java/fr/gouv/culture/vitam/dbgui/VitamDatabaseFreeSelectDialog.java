@@ -527,7 +527,7 @@ public class VitamDatabaseFreeSelectDialog extends JPanel {
 				File file = chooser.getSelectedFile();
 				if (extension != null) {
 					String extfile =  FileExtensionFilter.getExtension(file);
-					if (extfile == null || extfile.equalsIgnoreCase(extension)) {
+					if (extfile == null || ! extfile.equalsIgnoreCase(extension)) {
 						file = new File(file.getAbsolutePath()+"."+extension);
 					}
 				}

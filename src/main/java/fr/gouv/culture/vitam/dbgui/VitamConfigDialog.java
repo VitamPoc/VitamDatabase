@@ -162,7 +162,7 @@ public class VitamConfigDialog extends JPanel {
 		xmlFilePanel.add(separator, gbc_separator);
 		separator.setColumns(10);
 		
-		JLabel lblPrfixeTable = new JLabel("Préfixe Table");
+		JLabel lblPrfixeTable = new JLabel("Préfixe Table (vide de préférence)");
 		GridBagConstraints gbc_lblPrfixeTable = new GridBagConstraints();
 		gbc_lblPrfixeTable.anchor = GridBagConstraints.EAST;
 		gbc_lblPrfixeTable.insets = new Insets(0, 0, 5, 5);
@@ -172,7 +172,7 @@ public class VitamConfigDialog extends JPanel {
 		
 		commonTableName = new JTextField();
 		GridBagConstraints gbc_commonTableName = new GridBagConstraints();
-		gbc_commonTableName.gridwidth = 3;
+		gbc_commonTableName.gridwidth = 4;
 		gbc_commonTableName.insets = new Insets(0, 0, 5, 5);
 		gbc_commonTableName.fill = GridBagConstraints.HORIZONTAL;
 		gbc_commonTableName.gridx = 2;
@@ -217,7 +217,7 @@ public class VitamConfigDialog extends JPanel {
 		gbc_comboBox.gridy = 2;
 		xmlFilePanel.add(databaseType, gbc_comboBox);
 		
-		JLabel lblJdbcStartAccess = new JLabel("JDBC start access");
+		JLabel lblJdbcStartAccess = new JLabel("JDBC chaîne de connection");
 		GridBagConstraints gbc_lblJdbcStartAccess = new GridBagConstraints();
 		gbc_lblJdbcStartAccess.anchor = GridBagConstraints.EAST;
 		gbc_lblJdbcStartAccess.insets = new Insets(0, 0, 5, 5);
@@ -227,7 +227,7 @@ public class VitamConfigDialog extends JPanel {
 		
 		databaseJDBC_Start = new JTextField();
 		GridBagConstraints gbc_databaseJDBC_Start = new GridBagConstraints();
-		gbc_databaseJDBC_Start.gridwidth = 3;
+		gbc_databaseJDBC_Start.gridwidth = 4;
 		gbc_databaseJDBC_Start.insets = new Insets(0, 0, 5, 5);
 		gbc_databaseJDBC_Start.fill = GridBagConstraints.HORIZONTAL;
 		gbc_databaseJDBC_Start.gridx = 2;
@@ -235,7 +235,7 @@ public class VitamConfigDialog extends JPanel {
 		xmlFilePanel.add(databaseJDBC_Start, gbc_databaseJDBC_Start);
 		databaseJDBC_Start.setColumns(10);
 		
-		JLabel lblJdbcDbAccess = new JLabel("JDBC DB access");
+		JLabel lblJdbcDbAccess = new JLabel("JDBC accès à la base");
 		GridBagConstraints gbc_lblJdbcDbAccess = new GridBagConstraints();
 		gbc_lblJdbcDbAccess.anchor = GridBagConstraints.EAST;
 		gbc_lblJdbcDbAccess.insets = new Insets(0, 0, 5, 5);
@@ -245,7 +245,7 @@ public class VitamConfigDialog extends JPanel {
 		
 		databasePosition = new JTextField();
 		GridBagConstraints gbc_databasePosition = new GridBagConstraints();
-		gbc_databasePosition.gridwidth = 3;
+		gbc_databasePosition.gridwidth = 4;
 		gbc_databasePosition.insets = new Insets(0, 0, 5, 5);
 		gbc_databasePosition.fill = GridBagConstraints.HORIZONTAL;
 		gbc_databasePosition.gridx = 2;
@@ -267,7 +267,7 @@ public class VitamConfigDialog extends JPanel {
 				.getResource(DatabaseGui.RESOURCES_IMG_CHECKFILES_PNG)));
 		GridBagConstraints gbc_btnFile = new GridBagConstraints();
 		gbc_btnFile.insets = new Insets(0, 0, 5, 5);
-		gbc_btnFile.gridx = 5;
+		gbc_btnFile.gridx = 6;
 		gbc_btnFile.gridy = 4;
 		xmlFilePanel.add(btnFile, gbc_btnFile);
 		
@@ -290,7 +290,7 @@ public class VitamConfigDialog extends JPanel {
 		
 		databaseJDBC_Option = new JTextField();
 		GridBagConstraints gbc_textField_4 = new GridBagConstraints();
-		gbc_textField_4.gridwidth = 3;
+		gbc_textField_4.gridwidth = 4;
 		gbc_textField_4.insets = new Insets(0, 0, 5, 5);
 		gbc_textField_4.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textField_4.gridx = 2;
@@ -351,7 +351,7 @@ public class VitamConfigDialog extends JPanel {
 		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel.setLayout(gbl_panel);
 		
-		JLabel lblInteger = new JLabel("Integer");
+		JLabel lblInteger = new JLabel("Entier");
 		GridBagConstraints gbc_lblInteger = new GridBagConstraints();
 		gbc_lblInteger.anchor = GridBagConstraints.EAST;
 		gbc_lblInteger.insets = new Insets(0, 0, 5, 5);
