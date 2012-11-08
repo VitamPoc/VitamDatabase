@@ -1,7 +1,7 @@
 Vitam Project
 =============
 
-You will find here one of the sub projects of Vitam (Value Immaterial Transfered to Archive for Memory / Valeurs Immatérielles Tranférées aux Archives pour Mémoire).
+You will find here one of the sub projects of Vitam (Valuable Items Transfered to Archives for Memory / Valeurs Immaterielles Tranferees aux Archives pour Memoire).
 
 The global license is GPL V3.
 
