@@ -34,6 +34,7 @@ import fr.gouv.culture.vitam.constance.ConstanceIdentifier;
 import fr.gouv.culture.vitam.database.DbField;
 import fr.gouv.culture.vitam.database.DbSchema;
 import fr.gouv.culture.vitam.database.DbTable;
+import fr.gouv.culture.vitam.database.utils.ConfigLoader;
 import fr.gouv.culture.vitam.database.utils.StaticValues;
 
 /**
@@ -63,6 +64,12 @@ public class DbModelPostgresql extends org.waarp.common.database.model.DbModelPo
 	 */
 	public DbModelPostgresql() throws WaarpDatabaseNoConnectionException {
 		super();
+	}
+
+	@Override
+	public void createReadUser(DbSession session, DbSchema schema, ConfigLoader config)
+			throws WaarpDatabaseNoDataException, WaarpDatabaseNoConnectionException {
+		throw new WaarpDatabaseNoDataException("Read Grant unimplemented");
 	}
 
 	public void setDefaultTimeOut(DbSession session, long timeout) {

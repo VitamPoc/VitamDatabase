@@ -59,6 +59,7 @@ public class DbVitam2Database {
 							true);
 			logger.info("Database connection: " + (DbConstant.admin != null) + ":"
 					+ (DbConstant.noCommitAdmin != null));
+			
 		} catch (WaarpDatabaseNoConnectionException e2) {
 			logger.error("Unable to Connect to DB", e2);
 			throw e2;

@@ -47,6 +47,7 @@ import fr.gouv.culture.vitam.database.utils.StaticValues;
 
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.Dimension;
 
 /**
  * Dialog to handle configuration change in the GUI
@@ -73,6 +74,8 @@ public class VitamConfigDialog extends JPanel {
 	private JTextField textInteger;
 	private JTextField textFloat;
 	private JTextField textShortString;
+	private JTextField databaseReadUser;
+	private JTextField databaseReadPassword;
 	
 	/**
 	 * @param frame the parent frame
@@ -138,9 +141,9 @@ public class VitamConfigDialog extends JPanel {
 		JPanel xmlFilePanel = new JPanel();
 		tabbedPane.addTab("Database configuration", null, xmlFilePanel, null);
 		GridBagLayout gbl_xmlFilePanel = new GridBagLayout();
-		gbl_xmlFilePanel.columnWidths = new int[] { 21, 38, 86, 0, 45, 86, 72, 34, 0 };
+		gbl_xmlFilePanel.columnWidths = new int[] { 21, 38, 86, 0, 45, 0, 86, 72, 34, 0 };
 		gbl_xmlFilePanel.rowHeights = new int[] { 0, 20, 0, 0, 0, 0, 0, 0, 0, 0 };
-		gbl_xmlFilePanel.columnWeights = new double[] { 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0,
+		gbl_xmlFilePanel.columnWeights = new double[] { 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0,
 				Double.MIN_VALUE };
 		gbl_xmlFilePanel.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
 		xmlFilePanel.setLayout(gbl_xmlFilePanel);
@@ -172,7 +175,7 @@ public class VitamConfigDialog extends JPanel {
 		
 		commonTableName = new JTextField();
 		GridBagConstraints gbc_commonTableName = new GridBagConstraints();
-		gbc_commonTableName.gridwidth = 4;
+		gbc_commonTableName.gridwidth = 5;
 		gbc_commonTableName.insets = new Insets(0, 0, 5, 5);
 		gbc_commonTableName.fill = GridBagConstraints.HORIZONTAL;
 		gbc_commonTableName.gridx = 2;
@@ -227,7 +230,7 @@ public class VitamConfigDialog extends JPanel {
 		
 		databaseJDBC_Start = new JTextField();
 		GridBagConstraints gbc_databaseJDBC_Start = new GridBagConstraints();
-		gbc_databaseJDBC_Start.gridwidth = 4;
+		gbc_databaseJDBC_Start.gridwidth = 5;
 		gbc_databaseJDBC_Start.insets = new Insets(0, 0, 5, 5);
 		gbc_databaseJDBC_Start.fill = GridBagConstraints.HORIZONTAL;
 		gbc_databaseJDBC_Start.gridx = 2;
@@ -245,7 +248,7 @@ public class VitamConfigDialog extends JPanel {
 		
 		databasePosition = new JTextField();
 		GridBagConstraints gbc_databasePosition = new GridBagConstraints();
-		gbc_databasePosition.gridwidth = 4;
+		gbc_databasePosition.gridwidth = 5;
 		gbc_databasePosition.insets = new Insets(0, 0, 5, 5);
 		gbc_databasePosition.fill = GridBagConstraints.HORIZONTAL;
 		gbc_databasePosition.gridx = 2;
@@ -267,14 +270,14 @@ public class VitamConfigDialog extends JPanel {
 				.getResource(DatabaseGui.RESOURCES_IMG_CHECKFILES_PNG)));
 		GridBagConstraints gbc_btnFile = new GridBagConstraints();
 		gbc_btnFile.insets = new Insets(0, 0, 5, 5);
-		gbc_btnFile.gridx = 6;
+		gbc_btnFile.gridx = 7;
 		gbc_btnFile.gridy = 4;
 		xmlFilePanel.add(btnFile, gbc_btnFile);
 		
 		JLabel lblpourHPeut = new JLabel("(pour H2: peut être le chemin d'accès)");
 		GridBagConstraints gbc_lblpourHPeut = new GridBagConstraints();
 		gbc_lblpourHPeut.anchor = GridBagConstraints.WEST;
-		gbc_lblpourHPeut.gridwidth = 4;
+		gbc_lblpourHPeut.gridwidth = 5;
 		gbc_lblpourHPeut.insets = new Insets(0, 0, 5, 5);
 		gbc_lblpourHPeut.gridx = 2;
 		gbc_lblpourHPeut.gridy = 5;
@@ -290,7 +293,7 @@ public class VitamConfigDialog extends JPanel {
 		
 		databaseJDBC_Option = new JTextField();
 		GridBagConstraints gbc_textField_4 = new GridBagConstraints();
-		gbc_textField_4.gridwidth = 4;
+		gbc_textField_4.gridwidth = 5;
 		gbc_textField_4.insets = new Insets(0, 0, 5, 5);
 		gbc_textField_4.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textField_4.gridx = 2;
@@ -308,13 +311,33 @@ public class VitamConfigDialog extends JPanel {
 		
 		databaseUser = new JTextField();
 		GridBagConstraints gbc_textField_5 = new GridBagConstraints();
-		gbc_textField_5.gridwidth = 3;
+		gbc_textField_5.gridwidth = 2;
 		gbc_textField_5.insets = new Insets(0, 0, 5, 5);
 		gbc_textField_5.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textField_5.gridx = 2;
 		gbc_textField_5.gridy = 7;
 		xmlFilePanel.add(databaseUser, gbc_textField_5);
 		databaseUser.setColumns(10);
+		
+		JLabel lblReadUser = new JLabel("Read User");
+		lblReadUser.setMinimumSize(new Dimension(150, 14));
+		GridBagConstraints gbc_lblReadUser = new GridBagConstraints();
+		gbc_lblReadUser.anchor = GridBagConstraints.EAST;
+		gbc_lblReadUser.insets = new Insets(0, 0, 5, 5);
+		gbc_lblReadUser.gridx = 4;
+		gbc_lblReadUser.gridy = 7;
+		xmlFilePanel.add(lblReadUser, gbc_lblReadUser);
+		
+		databaseReadUser = new JTextField();
+		databaseReadUser.setMinimumSize(new Dimension(150, 20));
+		databaseReadUser.setColumns(10);
+		GridBagConstraints gbc_databaseReadUser = new GridBagConstraints();
+		gbc_databaseReadUser.gridwidth = 2;
+		gbc_databaseReadUser.insets = new Insets(0, 0, 5, 5);
+		gbc_databaseReadUser.fill = GridBagConstraints.HORIZONTAL;
+		gbc_databaseReadUser.gridx = 5;
+		gbc_databaseReadUser.gridy = 7;
+		xmlFilePanel.add(databaseReadUser, gbc_databaseReadUser);
 		
 		JLabel lblJdbcPassword = new JLabel("JDBC Password");
 		GridBagConstraints gbc_lblJdbcPassword = new GridBagConstraints();
@@ -326,7 +349,7 @@ public class VitamConfigDialog extends JPanel {
 		
 		databasePassword = new JTextField();
 		GridBagConstraints gbc_textField_6 = new GridBagConstraints();
-		gbc_textField_6.gridwidth = 3;
+		gbc_textField_6.gridwidth = 2;
 		gbc_textField_6.insets = new Insets(0, 0, 5, 5);
 		gbc_textField_6.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textField_6.gridx = 2;
@@ -334,7 +357,27 @@ public class VitamConfigDialog extends JPanel {
 		xmlFilePanel.add(databasePassword, gbc_textField_6);
 		databasePassword.setColumns(10);
 		
+		JLabel lblReadPassword = new JLabel("Read Password");
+		GridBagConstraints gbc_lblReadPassword = new GridBagConstraints();
+		gbc_lblReadPassword.anchor = GridBagConstraints.EAST;
+		gbc_lblReadPassword.insets = new Insets(0, 0, 5, 5);
+		gbc_lblReadPassword.gridx = 4;
+		gbc_lblReadPassword.gridy = 8;
+		xmlFilePanel.add(lblReadPassword, gbc_lblReadPassword);
+		
+		databaseReadPassword = new JTextField();
+		databaseReadPassword.setMinimumSize(new Dimension(150, 20));
+		databaseReadPassword.setColumns(10);
+		GridBagConstraints gbc_databaseReadPassword = new GridBagConstraints();
+		gbc_databaseReadPassword.gridwidth = 2;
+		gbc_databaseReadPassword.insets = new Insets(0, 0, 5, 5);
+		gbc_databaseReadPassword.fill = GridBagConstraints.HORIZONTAL;
+		gbc_databaseReadPassword.gridx = 5;
+		gbc_databaseReadPassword.gridy = 8;
+		xmlFilePanel.add(databaseReadPassword, gbc_databaseReadPassword);
+		
 		chckbxExportDataEn = new JCheckBox("Export Data en XML");
+		chckbxExportDataEn.setMinimumSize(new Dimension(200, 23));
 		GridBagConstraints gbc_chckbxExportDataEn = new GridBagConstraints();
 		gbc_chckbxExportDataEn.insets = new Insets(0, 0, 0, 5);
 		gbc_chckbxExportDataEn.gridx = 2;
@@ -419,6 +462,8 @@ public class VitamConfigDialog extends JPanel {
 		databasePosition.setText(StaticValues.config.databasePosition);
 		databaseUser.setText(StaticValues.config.databaseUser);
 		databasePassword.setText(StaticValues.config.databasePassword);
+		databaseReadUser.setText(StaticValues.config.databaseReadUser);
+		databaseReadPassword.setText(StaticValues.config.databaseReadPassword);
 		chckbxExportDataEn.setSelected(StaticValues.config.exportFullData);
 		String sint = "";
 		String sfloat = "";
@@ -468,6 +513,12 @@ public class VitamConfigDialog extends JPanel {
 		}
 		if (!StaticValues.config.databasePassword.equals(databasePassword.getText())) {
 			StaticValues.config.databasePassword = databasePassword.getText();
+		}
+		if (!StaticValues.config.databaseReadUser.equals(databaseReadUser.getText())) {
+			StaticValues.config.databaseReadUser = databaseReadUser.getText();
+		}
+		if (!StaticValues.config.databaseReadPassword.equals(databaseReadPassword.getText())) {
+			StaticValues.config.databaseReadPassword = databaseReadPassword.getText();
 		}
 		StaticValues.config.exportFullData = chckbxExportDataEn.isSelected();
 		String [] sint = textInteger.getText().split(",");

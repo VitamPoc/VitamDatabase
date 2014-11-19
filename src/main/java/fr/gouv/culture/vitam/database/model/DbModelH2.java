@@ -34,6 +34,7 @@ import fr.gouv.culture.vitam.constance.ConstanceIdentifier;
 import fr.gouv.culture.vitam.database.DbField;
 import fr.gouv.culture.vitam.database.DbSchema;
 import fr.gouv.culture.vitam.database.DbTable;
+import fr.gouv.culture.vitam.database.utils.ConfigLoader;
 import fr.gouv.culture.vitam.database.utils.StaticValues;
 
 /**
@@ -69,6 +70,32 @@ public class DbModelH2 extends org.waarp.common.database.model.DbModelH2 impleme
 		super(dbserver, dbuser, dbpasswd);
 	}
 	
+	@Override
+	public void createReadUser(DbSession session, DbSchema schema, ConfigLoader config)
+			throws WaarpDatabaseNoDataException, WaarpDatabaseNoConnectionException {
+		DbRequest request = null;
+		try {
+			request = new DbRequest(session);
+			request.query("create user "+config.databaseReadUser+" password '"+config.databaseReadPassword+"'");
+			if (schema.constructionOrder == null) {
+				schema.createBuildOrder();
+			}
+			for (String tableName : schema.constructionOrder) {
+				request.query("grant select on "+tableName+" to "+config.databaseReadUser);
+			}
+		} catch (WaarpDatabaseNoConnectionException e) {
+			logger.warn(StaticValues.LBL.error_error.get() + e);
+			return;
+		} catch (WaarpDatabaseSqlException e) {
+			logger.warn(StaticValues.LBL.error_error.get() + e);
+			return;
+		} finally {
+			if (request != null) {
+				request.close();
+			}
+		}
+	}
+
 	public void setDefaultTimeOut(DbSession session, long timeout) {
 		// SET LOCK_TIMEOUT <milliseconds>
 		DbRequest request = null;

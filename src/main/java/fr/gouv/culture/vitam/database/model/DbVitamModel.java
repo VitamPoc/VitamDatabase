@@ -29,12 +29,22 @@ import org.waarp.common.database.model.DbModel;
 import fr.gouv.culture.vitam.constance.ConstanceIdentifier;
 import fr.gouv.culture.vitam.database.DbSchema;
 import fr.gouv.culture.vitam.database.DbTable;
+import fr.gouv.culture.vitam.database.utils.ConfigLoader;
 
 /**
  * @author "Frederic Bregier"
  *
  */
 public interface DbVitamModel extends DbModel {
+	/**
+	 * Create Read user
+	 * @param session
+	 * @param schema
+	 * @param config
+	 * @throws WaarpDatabaseNoDataException
+	 * @throws WaarpDatabaseNoConnectionException
+	 */
+	public void createReadUser(DbSession session, DbSchema schema, ConfigLoader config) throws WaarpDatabaseNoDataException, WaarpDatabaseNoConnectionException;
 	/**
 	 * Drop tables and indexes
 	 * @param session

@@ -8,7 +8,9 @@
 <entry key="vitam.jdbcpath">J:\Git\SEDA\VitamDatabase\databases\andata.h2.db</entry>
 <entry key="vitam.databasetype">h2</entry>
 <entry key="vitam.jdbcuser">AN</entry>
+<entry key="vitam.jdbcreadpwd">lecteur</entry>
 <entry key="vitam.tablename"/>
+<entry key="vitam.jdbcreaduser">lecteur</entry>
 <entry key="vitam.separator">,</entry>
 <entry key="vitam.jdbcstart">jdbc:h2:</entry>
 </properties>

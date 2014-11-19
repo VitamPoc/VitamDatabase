@@ -51,6 +51,8 @@ public class StaticValues {
 	public static final String DEFAULT_JDBC_OPTION = ";AUTO_SERVER=TRUE";
 	public static final String DEFAULT_USER = "AN";
 	public static final String DEFAULT_PWD = "AN";
+	public static final String DEFAULT_READUSER = "lecteur";
+	public static final String DEFAULT_READPWD = "lecteur";
 	public static ConfigLoader config;
 	public static PreferencesResourceBundle LABELS;
 	public static OutputFormat defaultOutputFormat;

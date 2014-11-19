@@ -34,6 +34,7 @@ import fr.gouv.culture.vitam.constance.ConstanceIdentifier;
 import fr.gouv.culture.vitam.database.DbField;
 import fr.gouv.culture.vitam.database.DbSchema;
 import fr.gouv.culture.vitam.database.DbTable;
+import fr.gouv.culture.vitam.database.utils.ConfigLoader;
 import fr.gouv.culture.vitam.database.utils.StaticValues;
 
 /**
@@ -67,6 +68,12 @@ public class DbModelMysql extends org.waarp.common.database.model.DbModelMysql i
 	public DbModelMysql(String dbserver, String dbuser, String dbpasswd)
 			throws WaarpDatabaseNoConnectionException {
 		super(dbserver, dbuser, dbpasswd);
+	}
+
+	@Override
+	public void createReadUser(DbSession session, DbSchema schema, ConfigLoader config)
+			throws WaarpDatabaseNoDataException, WaarpDatabaseNoConnectionException {
+		throw new WaarpDatabaseNoDataException("Read Grant unimplemented");
 	}
 
 	@Override

@@ -45,6 +45,8 @@ public class ConfigLoader {
 	public String databasePosition;
 	public String databaseUser;
 	public String databasePassword;
+	public String databaseReadUser;
+	public String databaseReadPassword;
 	public DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 	public boolean exportFullData = false;
 	
@@ -86,6 +88,8 @@ public class ConfigLoader {
 		databaseJDBC_Option = getProperty(properties, "vitam.jdbcoption", StaticValues.DEFAULT_JDBC_OPTION);
 		databaseUser = getProperty(properties, "vitam.jdbcuser", StaticValues.DEFAULT_USER);
 		databasePassword = getProperty(properties, "vitam.jdbcpwd", StaticValues.DEFAULT_PWD);
+		databaseReadUser = getProperty(properties, "vitam.jdbcreaduser", StaticValues.DEFAULT_READUSER);
+		databaseReadPassword = getProperty(properties, "vitam.jdbcreadpwd", StaticValues.DEFAULT_READPWD);
 		databasePosition = getProperty(properties, "vitam.jdbcpath", "~/database");
 		exportFullData = getProperty(properties, "vitam.exportfulldata", 1) == 1;
 	}
@@ -98,6 +102,8 @@ public class ConfigLoader {
 		databaseJDBC_Option = getProperty(properties, "vitam.jdbcoption", databaseJDBC_Option);
 		databaseUser = getProperty(properties, "vitam.jdbcuser", databaseUser);
 		databasePassword = getProperty(properties, "vitam.jdbcpwd", databasePassword);
+		databaseReadUser = getProperty(properties, "vitam.jdbcreaduser", databaseReadUser);
+		databaseReadPassword = getProperty(properties, "vitam.jdbcreadpwd", databaseReadPassword);
 		databasePosition = getProperty(properties, "vitam.jdbcpath", databasePosition);
 		exportFullData = getProperty(properties, "vitam.exportfulldata", exportFullData ? 1 : 0) == 1;
 	}
@@ -153,6 +159,8 @@ public class ConfigLoader {
 			databaseJDBC_Option = SystemPropertyUtil.getAndSet("vitam.jdbcoption", StaticValues.DEFAULT_JDBC_OPTION);
 			databaseUser = SystemPropertyUtil.getAndSet("vitam.jdbcuser", StaticValues.DEFAULT_USER);
 			databasePassword = SystemPropertyUtil.getAndSet("vitam.jdbcpwd", StaticValues.DEFAULT_PWD);
+			databaseReadUser = SystemPropertyUtil.getAndSet("vitam.jdbcreaduser", StaticValues.DEFAULT_READUSER);
+			databaseReadPassword = SystemPropertyUtil.getAndSet("vitam.jdbcreadpwd", StaticValues.DEFAULT_READPWD);
 			databasePosition = SystemPropertyUtil.getAndSet("vitam.jdbcpath", "~/database");
 			exportFullData = SystemPropertyUtil.getAndSetInt("vitam.exportfulldata", 1) == 1;
 			saveConfig();
