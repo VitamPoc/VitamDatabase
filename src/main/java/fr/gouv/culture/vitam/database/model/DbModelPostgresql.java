@@ -50,10 +50,10 @@ public class DbModelPostgresql extends org.waarp.common.database.model.DbModelPo
 	private static final WaarpInternalLogger logger = WaarpInternalLoggerFactory
 			.getLogger(DbModelPostgresql.class);
 	
-	private static final String dropTablePostgre = "DROP TABLE IF EXIST ";
-	private static final String dropIndexPostgre = "DROP INDEX IF EXIST ";
+	private static final String dropTablePostgre = "DROP TABLE ";
+	private static final String dropIndexPostgre = "DROP INDEX ";
 	private static final String cascade = " CASCADE";
-	private static final String createTablePostgre = "CREATE TABLE IF NOT EXIST ";
+	private static final String createTablePostgre = "CREATE TABLE ";
 	private static final String createIdxPostgre = "CREATE INDEX ";
 	private static final String primaryKey = " PRIMARY KEY ";
 	private static final String notNull = " NOT NULL ";
@@ -109,7 +109,6 @@ public class DbModelPostgresql extends org.waarp.common.database.model.DbModelPo
 				return;
 			} catch (WaarpDatabaseSqlException e) {
 				logger.warn(StaticValues.LBL.error_error.get() + e);
-				return;
 			} finally {
 				request.close();
 			}
@@ -124,7 +123,7 @@ public class DbModelPostgresql extends org.waarp.common.database.model.DbModelPo
 					logger.warn(StaticValues.LBL.error_error.get() + e);
 					return;
 				} catch (WaarpDatabaseSqlException e) {
-					return;
+					logger.warn(StaticValues.LBL.error_error.get() + e);
 				} finally {
 					request.close();
 				}
@@ -139,7 +138,7 @@ public class DbModelPostgresql extends org.waarp.common.database.model.DbModelPo
 						logger.warn(StaticValues.LBL.error_error.get() + e);
 						return;
 					} catch (WaarpDatabaseSqlException e) {
-						return;
+						logger.warn(StaticValues.LBL.error_error.get() + e);
 					} finally {
 						request.close();
 					}
@@ -165,7 +164,6 @@ public class DbModelPostgresql extends org.waarp.common.database.model.DbModelPo
 				return;
 			} catch (WaarpDatabaseSqlException e) {
 				logger.warn(StaticValues.LBL.error_error.get() + e);
-				return;
 			} finally {
 				request.close();
 			}
@@ -203,7 +201,7 @@ public class DbModelPostgresql extends org.waarp.common.database.model.DbModelPo
 					logger.warn(StaticValues.LBL.error_error.get() + e);
 					return;
 				} catch (WaarpDatabaseSqlException e) {
-					return;
+					logger.warn(StaticValues.LBL.error_error.get() + e);
 				} finally {
 					request.close();
 				}
@@ -272,7 +270,7 @@ public class DbModelPostgresql extends org.waarp.common.database.model.DbModelPo
 						logger.warn(StaticValues.LBL.error_error.get() + e);
 						return;
 					} catch (WaarpDatabaseSqlException e) {
-						return;
+						logger.warn(StaticValues.LBL.error_error.get() + e);
 					} finally {
 						request.close();
 					}
